@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/stu_info?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: niit1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: "基于联盟链与国密算法的学位学历认证管理系统"
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8283"
+        instance:
+          service-base-url: "http://LPR:8181"
+
+mybatis:
+  type-aliases-package: com.edusource.bc.entity
+server:
+  port: 8181
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
